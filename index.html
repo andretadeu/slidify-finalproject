@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Slidify-finalproject : Slidify pinch for Motor Trends application">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Slidify-finalproject</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/andretadeu/slidify-finalproject">View on GitHub</a>
+
+          <h1 id="project_title">Slidify-finalproject</h1>
+          <h2 id="project_tagline">Slidify pinch for Motor Trends application</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/andretadeu/slidify-finalproject/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/andretadeu/slidify-finalproject/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <hr><p>title       : Motor Trend on Cars Application
+subtitle    : A preview
+author      : Andre Carvalho
+job         : Consultant
+framework   : landslide     # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}</p>
+
+<h2>
+<a name="knit---------slidifyknit2slides" class="anchor" href="#knit---------slidifyknit2slides"><span class="octicon octicon-link"></span></a>knit        : slidify::knit2slides</h2>
+
+<h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<ol>
+<li>Motor Trends on Cars in an application that examine a dataset called <strong>mtcars</strong> to extract some basic statistics.</li>
+<li>The dataset contains some automobiles from the from the 1974 <em>Motor Trend</em> US magazine.</li>
+</ol><p>In this dataset there are:</p>
+
+<div class="highlight highlight-r"><pre><span class="kp">nrow</span><span class="p">(</span>mtcars<span class="p">)</span>
+</pre></div>
+
+<pre><code>## [1] 32
+</code></pre>
+
+<p>automobiles, described in</p>
+
+<div class="highlight highlight-r"><pre><span class="kp">ncol</span><span class="p">(</span>mtcars<span class="p">)</span>
+</pre></div>
+
+<pre><code>## [1] 11
+</code></pre>
+
+<p>features, ranging from <strong>miles per gallon</strong> to <strong>weight</strong> of the vehicle.</p>
+
+<p>--- .class #id </p>
+
+<h2>
+<a name="the-application" class="anchor" href="#the-application"><span class="octicon octicon-link"></span></a>The Application</h2>
+
+<p>The application is in <a href="http://andrecarvalho.shinyapps.io/ddp-finalproject/">http://andrecarvalho.shinyapps.io/ddp-finalproject/</a>. Click in the <em>Application</em> tab to view the application.</p>
+
+<div>
+    <img src="assets/img/filter.png" alt="Filter of automobiles by: cylinders, gears, transmission and number of carburetors">Filter of automobiles
+    
+</div>
+
+<div>
+    <p>The filters are:</p>
+    <ul>
+<li>Cylinders: a radio button list to select one possible value for the number of cylinders</li>
+        <li>Number of gears: a checkbox list to select multiple value for the number of gears</li>
+        <li>Transmission type: a checkbox list for transmission types manual and automatic</li>
+        <li>Number of carburetors: a slider for the range for the amount of carburetors in the engine</li>
+    </ul>
+</div>
+
+<hr><h2>
+<a name="results-example" class="anchor" href="#results-example"><span class="octicon octicon-link"></span></a>Results example</h2>
+
+<p>Suppose I want to filter all the automobiles with 8-cylinder engines, manual transmission and 4 carburetors and more. Part of the results are shown below (the function for filter will be ommited for brevity).</p>
+
+<pre><code>## 
+## 
+##          &amp;nbsp;            mpg   cyl   disp   hp   drat 
+## ------------------------- ----- ----- ------ ---- ------
+##      **Duster 360**       14.3    8    360   245   3.21 
+##  **Cadillac Fleetwood**   10.4    8    472   205   2.93 
+##  **Lincoln Continental**  10.4    8    460   215    3   
+##   **Chrysler Imperial**   14.7    8    440   230   3.23 
+##      **Camaro Z28**       13.3    8    350   245   3.73
+</code></pre>
+
+<p>The data is diplayed in a nice data grid component which allows sorting by each column.</p>
+
+<hr><h2>
+<a name="motor-trends-basic-statistics" class="anchor" href="#motor-trends-basic-statistics"><span class="octicon octicon-link"></span></a>Motor Trends basic statistics</h2>
+
+<p>There are very basic statistics calculated by the application:</p>
+
+<ul>
+<li>Mean MPG</li>
+</ul><div class="highlight highlight-r"><pre><span class="kp">mean</span><span class="p">(</span>res<span class="o">$</span>mpg<span class="p">)</span>
+</pre></div>
+
+<pre><code>## [1] 12.62
+</code></pre>
+
+<ul>
+<li>Mean HP</li>
+</ul><div class="highlight highlight-r"><pre><span class="kp">mean</span><span class="p">(</span>res<span class="o">$</span>hp<span class="p">)</span>
+</pre></div>
+
+<pre><code>## [1] 228
+</code></pre>
+
+<ul>
+<li>Mean time for 1/4 mile</li>
+<li>Mean weight</li>
+</ul><hr><h2>
+<a name="questions" class="anchor" href="#questions"><span class="octicon octicon-link"></span></a>Questions</h2>
+
+<p>1) What is the mean weight for the cars in the previous filtered dataset?</p>
+
+<ol>
+<li>5.5400</li>
+<li>6.3232</li>
+<li>4.6858</li>
+<li>3.9999</li>
+</ol><p><br></p>
+
+<p>2) What happens if you try to filter out all data? You can do it by unchecking all 'transmission type' checkboxes.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Slidify-finalproject maintained by <a href="https://github.com/andretadeu">andretadeu</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
